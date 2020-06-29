@@ -6,9 +6,17 @@ public class Knight extends Piece{
         super(isWhite);
     }
 
-    @Override
-    public boolean canMove(Board board, Spot x, Spot y) {
-        return false;
-    }
 
+    @Override
+    public boolean canMove(Board board, Spot start, Spot end) {
+        // Same color Piece, can't move
+        if ((end.getPiece() != null) && (end.getPiece().isWhite() == this.isWhite())) {
+            return false;
+        }
+
+        int x = Math.abs(start.getX() - end.getX());
+        int y = Math.abs(start.getY() - end.getY());
+
+        return (x*y == 2);
+    }
 }

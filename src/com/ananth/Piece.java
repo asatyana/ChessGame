@@ -34,5 +34,5 @@ public abstract class Piece {
         this.killed = killed;
     }
 
-    public abstract boolean canMove(Board board, Spot x, Spot y);
+    public abstract boolean canMove(Board board, Spot x, Spot y) throws Exception;
 }

@@ -15,7 +15,11 @@ public class Spot {
      * @param x
      * @param y
      */
-    public Spot(int x, int y, Piece piece) {
+    public Spot(int x, int y, Piece piece) throws Exception{
+        // Check if they are with-in bounds
+        if (x < 0 || x > 7 || y < 0 || y > 7) {
+            throw new Exception("Index Out of Bounds");
+        }
         this.piece = piece;
         this.x = x;
         this.y = y;
@@ -33,7 +37,11 @@ public class Spot {
         return x;
     }
 
-    public void setX(int x) {
+    public void setX(int x) throws Exception{
+        // Check if they are with-in bounds
+        if (x < 0 || x > 7) {
+            throw new Exception("Index Out of Bounds");
+        }
         this.x = x;
     }
 
@@ -41,7 +49,11 @@ public class Spot {
         return y;
     }
 
-    public void setY(int y) {
+    public void setY(int y) throws Exception{
+        // Check if they are with-in bounds
+        if (y < 0 || y > 7) {
+            throw new Exception("Index Out of Bounds");
+        }
         this.y = y;
     }
 }

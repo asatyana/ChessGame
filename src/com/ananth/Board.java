@@ -5,7 +5,7 @@ import java.lang.Exception;
 public class Board {
     private Spot[][] boxes;
 
-    public Board() {
+    public Board() throws Exception{
         resetBoard();
     }
 
@@ -17,7 +17,7 @@ public class Board {
         }
     }
 
-    private void resetBoard() {
+    private void resetBoard() throws Exception{
         // Initialize white pieces
         boxes[0][0] = new Spot(0, 0, new Rook(true));
         boxes[0][1] = new Spot(0, 1, new Knight(true));
@@ -62,7 +62,5 @@ public class Board {
                 boxes[i][j] = new Spot(i, j, null);
             }
         }
-
-
     }
 }
