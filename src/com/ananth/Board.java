@@ -17,7 +17,7 @@ public class Board {
         }
     }
 
-    private void resetBoard() throws Exception{
+    public void resetBoard() throws Exception{
         // Initialize white pieces
         boxes[0][0] = new Spot(0, 0, new Rook(true));
         boxes[0][1] = new Spot(0, 1, new Knight(true));
